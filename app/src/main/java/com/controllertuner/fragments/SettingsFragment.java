@@ -66,8 +66,11 @@ public class SettingsFragment extends Fragment {
         preferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
         
         initializeViews(view);
-        setupClickListeners();
-        loadPreferences();
+        
+        if (profileManager != null) {
+            setupClickListeners();
+            loadPreferences();
+        }
     }
     
     /**

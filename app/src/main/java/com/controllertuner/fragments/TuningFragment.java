@@ -87,11 +87,12 @@ public class TuningFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         
         initializeViews(view);
-        setupSliderListeners();
-        updateUIFromProfile();
         
-        // Listen for profile changes
-        if (profileManager != null) {
+        if (profileManager != null && mappingEngine != null) {
+            setupSliderListeners();
+            updateUIFromProfile();
+            
+            // Listen for profile changes
             profileManager.addListener(profileChangeListener);
         }
     }

@@ -39,8 +39,12 @@ public class TestFragment extends Fragment {
     private TextView controllerStatusText;
     private StickVisualizerView leftStickIndicator;
     private StickVisualizerView rightStickIndicator;
-    private TextView leftStickValues;
-    private TextView rightStickValues;
+    private TextView leftStickXValue;
+    private TextView leftStickYValue;
+    private TextView leftStickMagnitudeValue;
+    private TextView rightStickXValue;
+    private TextView rightStickYValue;
+    private TextView rightStickMagnitudeValue;
     private ProgressBar leftTriggerProgress;
     private ProgressBar rightTriggerProgress;
     private TextView leftTriggerValue;
@@ -81,8 +85,11 @@ public class TestFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         
         initializeViews(view);
-        setupClickListeners();
-        startTesting();
+        
+        if (inputManager != null && mappingEngine != null && profileManager != null) {
+            setupClickListeners();
+            startTesting();
+        }
     }
     
     @Override
@@ -98,8 +105,12 @@ public class TestFragment extends Fragment {
         controllerStatusText = view.findViewById(R.id.testControllerStatus);
         leftStickIndicator = view.findViewById(R.id.leftStickIndicator);
         rightStickIndicator = view.findViewById(R.id.rightStickIndicator);
-        leftStickValues = view.findViewById(R.id.leftStickXValue);
-        rightStickValues = view.findViewById(R.id.rightStickXValue);
+        leftStickXValue = view.findViewById(R.id.leftStickXValue);
+        leftStickYValue = view.findViewById(R.id.leftStickYValue);
+        leftStickMagnitudeValue = view.findViewById(R.id.leftStickMagnitudeValue);
+        rightStickXValue = view.findViewById(R.id.rightStickXValue);
+        rightStickYValue = view.findViewById(R.id.rightStickYValue);
+        rightStickMagnitudeValue = view.findViewById(R.id.rightStickMagnitudeValue);
         leftTriggerProgress = view.findViewById(R.id.leftTriggerProgress);
         rightTriggerProgress = view.findViewById(R.id.rightTriggerProgress);
         leftTriggerValue = view.findViewById(R.id.leftTriggerValue);
@@ -204,24 +215,28 @@ public class TestFragment extends Fragment {
      * Update stick value text displays
      */
     private void updateStickValues() {
-        if (leftStickValues != null) {
-            String leftText = String.format(Locale.getDefault(),
-                    "%s\n%s\n%s",
-                    getString(R.string.x_axis_value, leftStickX),
-                    getString(R.string.y_axis_value, leftStickY),
-                    getString(R.string.magnitude_value, 
-                            Math.sqrt(leftStickX * leftStickX + leftStickY * leftStickY)));
-            leftStickValues.setText(leftText);
+        // Update left stick values
+        if (leftStickXValue != null) {
+            leftStickXValue.setText(getString(R.string.x_axis_value, leftStickX));
+        }
+        if (leftStickYValue != null) {
+            leftStickYValue.setText(getString(R.string.y_axis_value, leftStickY));
+        }
+        if (leftStickMagnitudeValue != null) {
+            float leftMagnitude = (float) Math.sqrt(leftStickX * leftStickX + leftStickY * leftStickY);
+            leftStickMagnitudeValue.setText(getString(R.string.magnitude_value, leftMagnitude));
         }
         
-        if (rightStickValues != null) {
-            String rightText = String.format(Locale.getDefault(),
-                    "%s\n%s\n%s",
-                    getString(R.string.x_axis_value, rightStickX),
-                    getString(R.string.y_axis_value, rightStickY),
-                    getString(R.string.magnitude_value, 
-                            Math.sqrt(rightStickX * rightStickX + rightStickY * rightStickY)));
-            rightStickValues.setText(rightText);
+        // Update right stick values
+        if (rightStickXValue != null) {
+            rightStickXValue.setText(getString(R.string.x_axis_value, rightStickX));
+        }
+        if (rightStickYValue != null) {
+            rightStickYValue.setText(getString(R.string.y_axis_value, rightStickY));
+        }
+        if (rightStickMagnitudeValue != null) {
+            float rightMagnitude = (float) Math.sqrt(rightStickX * rightStickX + rightStickY * rightStickY);
+            rightStickMagnitudeValue.setText(getString(R.string.magnitude_value, rightMagnitude));
         }
     }
     

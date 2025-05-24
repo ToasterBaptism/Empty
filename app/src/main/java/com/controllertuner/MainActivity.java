@@ -19,8 +19,6 @@ import com.controllertuner.input.ControllerInputManager;
 import com.controllertuner.mapping.InputMappingEngine;
 import com.controllertuner.profile.ProfileManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Main activity that hosts the controller tuning interface
@@ -132,18 +130,6 @@ public class MainActivity extends AppCompatActivity implements ControllerInputMa
      */
     private void setupViewPager() {
         viewPager = findViewById(R.id.viewPager);
-        
-        // Create fragments
-        tuningFragment = new TuningFragment();
-        profilesFragment = new ProfilesFragment();
-        testFragment = new TestFragment();
-        settingsFragment = new SettingsFragment();
-        
-        // Pass dependencies to fragments
-        tuningFragment.setDependencies(profileManager, mappingEngine);
-        profilesFragment.setDependencies(profileManager);
-        testFragment.setDependencies(inputManager, mappingEngine, profileManager);
-        settingsFragment.setDependencies(profileManager);
         
         // Set up adapter
         FragmentPagerAdapter adapter = new FragmentPagerAdapter();
@@ -271,25 +257,45 @@ public class MainActivity extends AppCompatActivity implements ControllerInputMa
      */
     private class FragmentPagerAdapter extends FragmentStateAdapter {
         
-        private final List<Fragment> fragments;
-        
         public FragmentPagerAdapter() {
             super(MainActivity.this);
-            fragments = new ArrayList<>();
-            fragments.add(tuningFragment);
-            fragments.add(profilesFragment);
-            fragments.add(testFragment);
-            fragments.add(settingsFragment);
         }
         
         @Override
         public Fragment createFragment(int position) {
-            return fragments.get(position);
+            Fragment fragment;
+            
+            switch (position) {
+                case 0:
+                    tuningFragment = new TuningFragment();
+                    tuningFragment.setDependencies(profileManager, mappingEngine);
+                    fragment = tuningFragment;
+                    break;
+                case 1:
+                    profilesFragment = new ProfilesFragment();
+                    profilesFragment.setDependencies(profileManager);
+                    fragment = profilesFragment;
+                    break;
+                case 2:
+                    testFragment = new TestFragment();
+                    testFragment.setDependencies(inputManager, mappingEngine, profileManager);
+                    fragment = testFragment;
+                    break;
+                case 3:
+                    settingsFragment = new SettingsFragment();
+                    settingsFragment.setDependencies(profileManager);
+                    fragment = settingsFragment;
+                    break;
+                default:
+                    throw new IllegalArgumentException("Invalid position: " + position);
+            }
+            
+            return fragment;
         }
         
         @Override
         public int getItemCount() {
-            return fragments.size();
+            return 4;
         }
     }
 }

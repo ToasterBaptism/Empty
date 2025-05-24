@@ -62,13 +62,14 @@ public class ProfilesFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         
         initializeViews(view);
-        setupRecyclerView();
-        setupClickListeners();
-        updateCurrentProfileDisplay();
-        updateProfilesList();
         
-        // Listen for profile changes
         if (profileManager != null) {
+            setupRecyclerView();
+            setupClickListeners();
+            updateCurrentProfileDisplay();
+            updateProfilesList();
+            
+            // Listen for profile changes
             profileManager.addListener(profileChangeListener);
         }
     }
