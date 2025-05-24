@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ControllerTuner" parent="Theme.Material3.DayNight">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryVariant">@color/primary_dark_color</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/accent_color</item>
+        <item name="colorSecondaryVariant">@color/accent_color</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/background_light</item>
+    </style>
+    
+    <!-- Toolbar theme -->
+    <style name="Theme.ControllerTuner.Toolbar" parent="ThemeOverlay.Material3.ActionBar">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+    
+    <!-- Card theme -->
+    <style name="Theme.ControllerTuner.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    
+    <!-- Button themes -->
+    <style name="Theme.ControllerTuner.Button" parent="Widget.Material3.Button">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    
+    <style name="Theme.ControllerTuner.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    
+    <!-- Slider theme -->
+    <style name="Theme.ControllerTuner.Slider" parent="Widget.Material3.Slider">
+        <item name="trackColorActive">@color/slider_track_active</item>
+        <item name="trackColorInactive">@color/slider_track</item>
+        <item name="thumbColor">@color/slider_thumb</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+    
+    <!-- Text themes -->
+    <style name="Theme.ControllerTuner.Text.Title" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+    
+    <style name="Theme.ControllerTuner.Text.Subtitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/text_secondary_light</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    
+    <style name="Theme.ControllerTuner.Text.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    
+    <!-- Navigation theme -->
+    <style name="Theme.ControllerTuner.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemIconTint">@color/primary_color</item>
+        <item name="itemTextColor">@color/primary_color</item>
+        <item name="android:background">@color/surface_light</item>
+    </style>
+    
+    <!-- Dialog theme -->
+    <style name="Theme.ControllerTuner.Dialog" parent="ThemeOverlay.Material3.Dialog">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorSecondary">@color/accent_color</item>
+    </style>
+</resources>

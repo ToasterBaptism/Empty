@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Controller Tuner</string>
+    
+    <!-- Main Activity -->
+    <string name="main_title">Controller Configuration</string>
+    <string name="no_controller_detected">No controller detected</string>
+    <string name="controller_connected">Controller connected: %1$s</string>
+    
+    <!-- Navigation -->
+    <string name="nav_tuning">Tuning</string>
+    <string name="nav_profiles">Profiles</string>
+    <string name="nav_test">Test</string>
+    <string name="nav_settings">Settings</string>
+    
+    <!-- Tuning Settings -->
+    <string name="sensitivity_title">Sensitivity</string>
+    <string name="sensitivity_description">Adjust overall controller sensitivity</string>
+    <string name="left_stick_sensitivity">Left Stick Sensitivity</string>
+    <string name="right_stick_sensitivity">Right Stick Sensitivity</string>
+    <string name="trigger_sensitivity">Trigger Sensitivity</string>
+    
+    <string name="dead_zone_title">Dead Zones</string>
+    <string name="dead_zone_description">Configure dead zones to eliminate drift</string>
+    <string name="left_stick_dead_zone">Left Stick Dead Zone</string>
+    <string name="right_stick_dead_zone">Right Stick Dead Zone</string>
+    <string name="trigger_dead_zone">Trigger Dead Zone</string>
+    
+    <string name="acceleration_title">Acceleration</string>
+    <string name="acceleration_description">Configure acceleration curves for enhanced control</string>
+    <string name="enable_acceleration">Enable Acceleration</string>
+    <string name="acceleration_curve">Acceleration Curve</string>
+    <string name="acceleration_threshold">Acceleration Threshold</string>
+    <string name="max_acceleration">Maximum Acceleration</string>
+    
+    <string name="right_stick_acceleration_title">Right Stick Acceleration</string>
+    <string name="right_stick_acceleration_description">Specialized settings for right analog stick</string>
+    <string name="right_stick_enable_acceleration">Enable Right Stick Acceleration</string>
+    <string name="right_stick_acceleration_curve">Right Stick Acceleration Curve</string>
+    <string name="right_stick_acceleration_threshold">Right Stick Acceleration Threshold</string>
+    <string name="right_stick_max_acceleration">Right Stick Maximum Acceleration</string>
+    
+    <!-- Profile Management -->
+    <string name="profiles_title">Controller Profiles</string>
+    <string name="create_profile">Create New Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="delete_profile">Delete Profile</string>
+    <string name="profile_name">Profile Name</string>
+    <string name="profile_description">Description</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="load_profile">Load Profile</string>
+    <string name="default_profile">Default Profile</string>
+    <string name="current_profile">Current: %1$s</string>
+    
+    <!-- Test Activity -->
+    <string name="test_title">Controller Test</string>
+    <string name="test_description">Test your controller settings in real-time</string>
+    <string name="left_stick_test">Left Stick</string>
+    <string name="right_stick_test">Right Stick</string>
+    <string name="triggers_test">Triggers</string>
+    <string name="buttons_test">Buttons</string>
+    <string name="reset_test">Reset</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="general_settings">General</string>
+    <string name="auto_detect_controllers">Auto-detect Controllers</string>
+    <string name="vibration_feedback">Vibration Feedback</string>
+    <string name="save_settings_automatically">Auto-save Settings</string>
+    <string name="advanced_settings">Advanced</string>
+    <string name="polling_rate">Polling Rate</string>
+    <string name="input_lag_compensation">Input Lag Compensation</string>
+    <string name="debug_mode">Debug Mode</string>
+    
+    <!-- Dialogs -->
+    <string name="dialog_save_profile_title">Save Profile</string>
+    <string name="dialog_save_profile_message">Enter a name for this profile:</string>
+    <string name="dialog_delete_profile_title">Delete Profile</string>
+    <string name="dialog_delete_profile_message">Are you sure you want to delete this profile?</string>
+    <string name="dialog_reset_settings_title">Reset Settings</string>
+    <string name="dialog_reset_settings_message">Reset all settings to default values?</string>
+    
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="reset">Reset</string>
+    <string name="apply">Apply</string>
+    <string name="close">Close</string>
+    
+    <!-- Values -->
+    <string name="value_percentage">%1$d%%</string>
+    <string name="value_decimal">%.2f</string>
+    <string name="value_ms">%1$d ms</string>
+    
+    <!-- Error Messages -->
+    <string name="error_save_profile">Failed to save profile</string>
+    <string name="error_load_profile">Failed to load profile</string>
+    <string name="error_delete_profile">Failed to delete profile</string>
+    <string name="error_controller_connection">Controller connection error</string>
+    <string name="error_invalid_settings">Invalid settings detected</string>
+    
+    <!-- Success Messages -->
+    <string name="success_profile_saved">Profile saved successfully</string>
+    <string name="success_profile_loaded">Profile loaded successfully</string>
+    <string name="success_profile_deleted">Profile deleted successfully</string>
+    <string name="success_settings_applied">Settings applied successfully</string>
+    
+    <!-- Additional strings for fragments -->
+    <string name="add_profile">Add Profile</string>
+    <string name="edit">Edit</string>
+    <string name="all_profiles">All Profiles</string>
+    <string name="sort_by_name">Sort by Name</string>
+    <string name="sort_by_date">Sort by Date</string>
+    <string name="default_profile_description">Default controller settings</string>
+    
+    <!-- Test Fragment -->
+    <string name="test_controller">Test Controller</string>
+    <string name="controller_status">Controller Status</string>
+    <string name="left_stick">Left Stick</string>
+    <string name="right_stick">Right Stick</string>
+    <string name="triggers">Triggers</string>
+    <string name="left_trigger">Left Trigger</string>
+    <string name="right_trigger">Right Trigger</string>
+    <string name="buttons">Buttons</string>
+    <string name="x_axis_value">X: %+.3f</string>
+    <string name="y_axis_value">Y: %+.3f</string>
+    <string name="magnitude_value">Mag: %.3f</string>
+    <string name="trigger_value">%.0f%%</string>
+    <string name="press_any_button">Press any button to test</string>
+    
+    <!-- Settings Fragment -->
+    <string name="settings">Settings</string>
+    <string name="profile_management">Profile Management</string>
+    <string name="export_profiles">Export Profiles</string>
+    <string name="import_profiles">Import Profiles</string>
+    <string name="reset_all_profiles">Reset All Profiles</string>
+    <string name="controller_settings">Controller Settings</string>
+    <string name="auto_detect_controllers_description">Automatically detect and switch to newly connected controllers</string>
+    <string name="show_raw_values">Show Raw Values</string>
+    <string name="show_raw_values_description">Display unprocessed controller input values in test mode</string>
+    <string name="vibration_feedback_description">Enable controller vibration for feedback</string>
+    <string name="about">About</string>
+    <string name="version_info">Version 1.0.0</string>
+    <string name="app_description">A comprehensive controller tuning application for Android devices. Configure sensitivity, dead zones, and acceleration curves for optimal gaming experience.</string>
+    
+    <!-- Tuning Fragment specific -->
+    <string name="sensitivity_settings">Sensitivity Settings</string>
+    <string name="dead_zone_settings">Dead Zone Settings</string>
+    <string name="acceleration_settings">Acceleration Settings</string>
+    <string name="enable_right_stick_acceleration">Enable Right Stick Acceleration</string>
+    <string name="right_stick_acceleration_settings">Right Stick Acceleration</string>
+    
+    <!-- Additional UI strings -->
+    <string name="profile_icon">Profile icon</string>
+    <string name="more_options">More options</string>
+    
+
+</resources>

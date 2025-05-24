@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent_color">#FFFF5722</color>
+    <color name="background_dark">#FF121212</color>
+    <color name="background_light">#FFFAFAFA</color>
+    <color name="black">#FF000000</color>
+    <color name="controller_active">#FF2196F3</color>
+    <color name="controller_connected">#FF4CAF50</color>
+    <color name="controller_disconnected">#FFF44336</color>
+    <color name="primary_color">#FF2196F3</color>
+    <color name="primary_dark_color">#FF1976D2</color>
+    <color name="profile_active">#FF4CAF50</color>
+    <color name="profile_inactive">#FF9E9E9E</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="slider_thumb">#FF2196F3</color>
+    <color name="slider_track">#FFE0E0E0</color>
+    <color name="slider_track_active">#FF2196F3</color>
+    <color name="status_error">#FFF44336</color>
+    <color name="status_info">#FF2196F3</color>
+    <color name="status_success">#FF4CAF50</color>
+    <color name="status_warning">#FFFF9800</color>
+    <color name="surface_dark">#FF1E1E1E</color>
+    <color name="surface_light">#FFFFFFFF</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="test_deadzone">#FFFF9800</color>
+    <color name="test_input_active">#FF4CAF50</color>
+    <color name="test_input_inactive">#FFBDBDBD</color>
+    <color name="text_primary_dark">#FFFFFFFF</color>
+    <color name="text_primary_light">#DE000000</color>
+    <color name="text_secondary_dark">#B3FFFFFF</color>
+    <color name="text_secondary_light">#99000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="bottom_nav_height">56dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_margin">8dp</dimen>
+    <dimen name="button_padding">16dp</dimen>
+    <dimen name="button_spacing">16dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_margin_small">4dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_spacing">16dp</dimen>
+    <dimen name="fragment_padding">16dp</dimen>
+    <dimen name="layout_margin_large">24dp</dimen>
+    <dimen name="layout_margin_medium">16dp</dimen>
+    <dimen name="layout_margin_small">8dp</dimen>
+    <dimen name="list_bottom_padding">80dp</dimen>
+    <dimen name="profile_icon_size">40dp</dimen>
+    <dimen name="profile_item_height">72dp</dimen>
+    <dimen name="section_spacing">24dp</dimen>
+    <dimen name="slider_height">48dp</dimen>
+    <dimen name="slider_margin">16dp</dimen>
+    <dimen name="slider_thumb_size">20dp</dimen>
+    <dimen name="spacing_extra_large">32dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_tiny">4dp</dimen>
+    <dimen name="test_button_size">40dp</dimen>
+    <dimen name="test_stick_size">120dp</dimen>
+    <dimen name="test_trigger_height">200dp</dimen>
+    <dimen name="test_trigger_width">80dp</dimen>
+    <dimen name="text_size_extra_small">12sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_spacing">8dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <string name="about">About</string>
+    <string name="acceleration_curve">Acceleration Curve</string>
+    <string name="acceleration_description">Configure acceleration curves for enhanced control</string>
+    <string name="acceleration_settings">Acceleration Settings</string>
+    <string name="acceleration_threshold">Acceleration Threshold</string>
+    <string name="acceleration_title">Acceleration</string>
+    <string name="add_profile">Add Profile</string>
+    <string name="advanced_settings">Advanced</string>
+    <string name="all_profiles">All Profiles</string>
+    <string name="app_description">A comprehensive controller tuning application for Android devices. Configure sensitivity, dead zones, and acceleration curves for optimal gaming experience.</string>
+    <string name="app_name">Controller Tuner</string>
+    <string name="apply">Apply</string>
+    <string name="auto_detect_controllers">Auto-detect Controllers</string>
+    <string name="auto_detect_controllers_description">Automatically detect and switch to newly connected controllers</string>
+    <string name="buttons">Buttons</string>
+    <string name="buttons_test">Buttons</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="controller_connected">Controller connected: %1$s</string>
+    <string name="controller_settings">Controller Settings</string>
+    <string name="controller_status">Controller Status</string>
+    <string name="create_profile">Create New Profile</string>
+    <string name="current_profile">Current: %1$s</string>
+    <string name="dead_zone_description">Configure dead zones to eliminate drift</string>
+    <string name="dead_zone_settings">Dead Zone Settings</string>
+    <string name="dead_zone_title">Dead Zones</string>
+    <string name="debug_mode">Debug Mode</string>
+    <string name="default_profile">Default Profile</string>
+    <string name="default_profile_description">Default controller settings</string>
+    <string name="delete">Delete</string>
+    <string name="delete_profile">Delete Profile</string>
+    <string name="dialog_delete_profile_message">Are you sure you want to delete this profile?</string>
+    <string name="dialog_delete_profile_title">Delete Profile</string>
+    <string name="dialog_reset_settings_message">Reset all settings to default values?</string>
+    <string name="dialog_reset_settings_title">Reset Settings</string>
+    <string name="dialog_save_profile_message">Enter a name for this profile:</string>
+    <string name="dialog_save_profile_title">Save Profile</string>
+    <string name="edit">Edit</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="enable_acceleration">Enable Acceleration</string>
+    <string name="enable_right_stick_acceleration">Enable Right Stick Acceleration</string>
+    <string name="error_controller_connection">Controller connection error</string>
+    <string name="error_delete_profile">Failed to delete profile</string>
+    <string name="error_invalid_settings">Invalid settings detected</string>
+    <string name="error_load_profile">Failed to load profile</string>
+    <string name="error_save_profile">Failed to save profile</string>
+    <string name="export_profiles">Export Profiles</string>
+    <string name="general_settings">General</string>
+    <string name="import_profiles">Import Profiles</string>
+    <string name="input_lag_compensation">Input Lag Compensation</string>
+    <string name="left_stick">Left Stick</string>
+    <string name="left_stick_dead_zone">Left Stick Dead Zone</string>
+    <string name="left_stick_sensitivity">Left Stick Sensitivity</string>
+    <string name="left_stick_test">Left Stick</string>
+    <string name="left_trigger">Left Trigger</string>
+    <string name="load_profile">Load Profile</string>
+    <string name="magnitude_value">Mag: %.3f</string>
+    <string name="main_title">Controller Configuration</string>
+    <string name="max_acceleration">Maximum Acceleration</string>
+    <string name="more_options">More options</string>
+    <string name="nav_profiles">Profiles</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_test">Test</string>
+    <string name="nav_tuning">Tuning</string>
+    <string name="no_controller_detected">No controller detected</string>
+    <string name="ok">OK</string>
+    <string name="polling_rate">Polling Rate</string>
+    <string name="press_any_button">Press any button to test</string>
+    <string name="profile_description">Description</string>
+    <string name="profile_icon">Profile icon</string>
+    <string name="profile_management">Profile Management</string>
+    <string name="profile_name">Profile Name</string>
+    <string name="profiles_title">Controller Profiles</string>
+    <string name="reset">Reset</string>
+    <string name="reset_all_profiles">Reset All Profiles</string>
+    <string name="reset_test">Reset</string>
+    <string name="right_stick">Right Stick</string>
+    <string name="right_stick_acceleration_curve">Right Stick Acceleration Curve</string>
+    <string name="right_stick_acceleration_description">Specialized settings for right analog stick</string>
+    <string name="right_stick_acceleration_settings">Right Stick Acceleration</string>
+    <string name="right_stick_acceleration_threshold">Right Stick Acceleration Threshold</string>
+    <string name="right_stick_acceleration_title">Right Stick Acceleration</string>
+    <string name="right_stick_dead_zone">Right Stick Dead Zone</string>
+    <string name="right_stick_enable_acceleration">Enable Right Stick Acceleration</string>
+    <string name="right_stick_max_acceleration">Right Stick Maximum Acceleration</string>
+    <string name="right_stick_sensitivity">Right Stick Sensitivity</string>
+    <string name="right_stick_test">Right Stick</string>
+    <string name="right_trigger">Right Trigger</string>
+    <string name="save">Save</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="save_settings_automatically">Auto-save Settings</string>
+    <string name="sensitivity_description">Adjust overall controller sensitivity</string>
+    <string name="sensitivity_settings">Sensitivity Settings</string>
+    <string name="sensitivity_title">Sensitivity</string>
+    <string name="settings">Settings</string>
+    <string name="settings_title">Settings</string>
+    <string name="show_raw_values">Show Raw Values</string>
+    <string name="show_raw_values_description">Display unprocessed controller input values in test mode</string>
+    <string name="sort_by_date">Sort by Date</string>
+    <string name="sort_by_name">Sort by Name</string>
+    <string name="success_profile_deleted">Profile deleted successfully</string>
+    <string name="success_profile_loaded">Profile loaded successfully</string>
+    <string name="success_profile_saved">Profile saved successfully</string>
+    <string name="success_settings_applied">Settings applied successfully</string>
+    <string name="test_controller">Test Controller</string>
+    <string name="test_description">Test your controller settings in real-time</string>
+    <string name="test_title">Controller Test</string>
+    <string name="trigger_dead_zone">Trigger Dead Zone</string>
+    <string name="trigger_sensitivity">Trigger Sensitivity</string>
+    <string name="trigger_value">%.0f%%</string>
+    <string name="triggers">Triggers</string>
+    <string name="triggers_test">Triggers</string>
+    <string name="value_decimal">%.2f</string>
+    <string name="value_ms">%1$d ms</string>
+    <string name="value_percentage">%1$d%%</string>
+    <string name="version_info">Version 1.0.0</string>
+    <string name="vibration_feedback">Vibration Feedback</string>
+    <string name="vibration_feedback_description">Enable controller vibration for feedback</string>
+    <string name="x_axis_value">X: %+.3f</string>
+    <string name="y_axis_value">Y: %+.3f</string>
+    <style name="Theme.ControllerTuner" parent="Theme.Material3.DayNight">
+        
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryVariant">@color/primary_dark_color</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/accent_color</item>
+        <item name="colorSecondaryVariant">@color/accent_color</item>
+        <item name="colorOnSecondary">@color/white</item>
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        
+        <item name="android:windowBackground">@color/background_light</item>
+    </style>
+    <style name="Theme.ControllerTuner.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemIconTint">@color/primary_color</item>
+        <item name="itemTextColor">@color/primary_color</item>
+        <item name="android:background">@color/surface_light</item>
+    </style>
+    <style name="Theme.ControllerTuner.Button" parent="Widget.Material3.Button">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="Theme.ControllerTuner.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="Theme.ControllerTuner.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    <style name="Theme.ControllerTuner.Dialog" parent="ThemeOverlay.Material3.Dialog">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorSecondary">@color/accent_color</item>
+    </style>
+    <style name="Theme.ControllerTuner.Slider" parent="Widget.Material3.Slider">
+        <item name="trackColorActive">@color/slider_track_active</item>
+        <item name="trackColorInactive">@color/slider_track</item>
+        <item name="thumbColor">@color/slider_thumb</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+    <style name="Theme.ControllerTuner.Text.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    <style name="Theme.ControllerTuner.Text.Subtitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/text_secondary_light</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    <style name="Theme.ControllerTuner.Text.Title" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+    <style name="Theme.ControllerTuner.Toolbar" parent="ThemeOverlay.Material3.ActionBar">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+</resources>

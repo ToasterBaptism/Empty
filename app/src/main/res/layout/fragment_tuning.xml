@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/layout_margin_medium">
+
+        <!-- Sensitivity Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sensitivity_title"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Title" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    android:text="@string/sensitivity_description"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                <!-- Left Stick Sensitivity -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/left_stick_sensitivity"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Subtitle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/leftStickSensitivitySlider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:stepSize="1"
+                        android:value="50"
+                        android:valueFrom="1"
+                        android:valueTo="100" />
+
+                    <TextView
+                        android:id="@+id/leftStickSensitivityValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:minWidth="48dp"
+                        android:text="50%"
+                        android:gravity="center"
+                        android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                </LinearLayout>
+
+                <!-- Right Stick Sensitivity -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:text="@string/right_stick_sensitivity"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Subtitle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/rightStickSensitivitySlider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:stepSize="1"
+                        android:value="50"
+                        android:valueFrom="1"
+                        android:valueTo="100" />
+
+                    <TextView
+                        android:id="@+id/rightStickSensitivityValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:minWidth="48dp"
+                        android:text="50%"
+                        android:gravity="center"
+                        android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                </LinearLayout>
+
+                <!-- Trigger Sensitivity -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:text="@string/trigger_sensitivity"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Subtitle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/triggerSensitivitySlider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:stepSize="1"
+                        android:value="50"
+                        android:valueFrom="1"
+                        android:valueTo="100" />
+
+                    <TextView
+                        android:id="@+id/triggerSensitivityValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:minWidth="48dp"
+                        android:text="50%"
+                        android:gravity="center"
+                        android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Dead Zone Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dead_zone_title"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Title" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    android:text="@string/dead_zone_description"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                <!-- Left Stick Dead Zone -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/left_stick_dead_zone"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Subtitle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/leftStickDeadZoneSlider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:stepSize="1"
+                        android:value="10"
+                        android:valueFrom="0"
+                        android:valueTo="50" />
+
+                    <TextView
+                        android:id="@+id/leftStickDeadZoneValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:minWidth="48dp"
+                        android:text="10%"
+                        android:gravity="center"
+                        android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                </LinearLayout>
+
+                <!-- Right Stick Dead Zone -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:text="@string/right_stick_dead_zone"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Subtitle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/rightStickDeadZoneSlider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:stepSize="1"
+                        android:value="10"
+                        android:valueFrom="0"
+                        android:valueTo="50" />
+
+                    <TextView
+                        android:id="@+id/rightStickDeadZoneValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:minWidth="48dp"
+                        android:text="10%"
+                        android:gravity="center"
+                        android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                </LinearLayout>
+
+                <!-- Trigger Dead Zone -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:text="@string/trigger_dead_zone"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Subtitle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/triggerDeadZoneSlider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:stepSize="1"
+                        android:value="5"
+                        android:valueFrom="0"
+                        android:valueTo="30" />
+
+                    <TextView
+                        android:id="@+id/triggerDeadZoneValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:minWidth="48dp"
+                        android:text="5%"
+                        android:gravity="center"
+                        android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Acceleration Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acceleration_title"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Title" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    android:text="@string/acceleration_description"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                <!-- Enable Acceleration -->
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/enableAccelerationSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    android:text="@string/enable_acceleration" />
+
+                <LinearLayout
+                    android:id="@+id/accelerationSettingsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Acceleration Curve -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/acceleration_curve"
+                        android:textAppearance="@style/Theme.ControllerTuner.Text.Subtitle" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.slider.Slider
+                            android:id="@+id/accelerationCurveSlider"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:stepSize="0.1"
+                            android:value="1.0"
+                            android:valueFrom="0.1"
+                            android:valueTo="3.0" />
+
+                        <TextView
+                            android:id="@+id/accelerationCurveValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/spacing_small"
+                            android:minWidth="48dp"
+                            android:text="1.0"
+                            android:gravity="center"
+                            android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                    </LinearLayout>
+
+                    <!-- Acceleration Threshold -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="@string/acceleration_threshold"
+                        android:textAppearance="@style/Theme.ControllerTuner.Text.Subtitle" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.slider.Slider
+                            android:id="@+id/accelerationThresholdSlider"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:stepSize="1"
+                            android:value="30"
+                            android:valueFrom="10"
+                            android:valueTo="80" />
+
+                        <TextView
+                            android:id="@+id/accelerationThresholdValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/spacing_small"
+                            android:minWidth="48dp"
+                            android:text="30%"
+                            android:gravity="center"
+                            android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                    </LinearLayout>
+
+                    <!-- Max Acceleration -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="@string/max_acceleration"
+                        android:textAppearance="@style/Theme.ControllerTuner.Text.Subtitle" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.slider.Slider
+                            android:id="@+id/maxAccelerationSlider"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:stepSize="0.1"
+                            android:value="2.0"
+                            android:valueFrom="1.0"
+                            android:valueTo="5.0" />
+
+                        <TextView
+                            android:id="@+id/maxAccelerationValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/spacing_small"
+                            android:minWidth="48dp"
+                            android:text="2.0x"
+                            android:gravity="center"
+                            android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Right Stick Acceleration Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/right_stick_acceleration_title"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Title" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    android:text="@string/right_stick_acceleration_description"
+                    android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                <!-- Enable Right Stick Acceleration -->
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/enableRightStickAccelerationSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    android:text="@string/right_stick_enable_acceleration" />
+
+                <LinearLayout
+                    android:id="@+id/rightStickAccelerationSettingsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Right Stick Acceleration Curve -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/right_stick_acceleration_curve"
+                        android:textAppearance="@style/Theme.ControllerTuner.Text.Subtitle" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.slider.Slider
+                            android:id="@+id/rightStickAccelerationCurveSlider"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:stepSize="0.1"
+                            android:value="1.2"
+                            android:valueFrom="0.1"
+                            android:valueTo="3.0" />
+
+                        <TextView
+                            android:id="@+id/rightStickAccelerationCurveValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/spacing_small"
+                            android:minWidth="48dp"
+                            android:text="1.2"
+                            android:gravity="center"
+                            android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                    </LinearLayout>
+
+                    <!-- Right Stick Acceleration Threshold -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="@string/right_stick_acceleration_threshold"
+                        android:textAppearance="@style/Theme.ControllerTuner.Text.Subtitle" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.slider.Slider
+                            android:id="@+id/rightStickAccelerationThresholdSlider"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:stepSize="1"
+                            android:value="25"
+                            android:valueFrom="10"
+                            android:valueTo="80" />
+
+                        <TextView
+                            android:id="@+id/rightStickAccelerationThresholdValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/spacing_small"
+                            android:minWidth="48dp"
+                            android:text="25%"
+                            android:gravity="center"
+                            android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                    </LinearLayout>
+
+                    <!-- Right Stick Max Acceleration -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="@string/right_stick_max_acceleration"
+                        android:textAppearance="@style/Theme.ControllerTuner.Text.Subtitle" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.slider.Slider
+                            android:id="@+id/rightStickMaxAccelerationSlider"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:stepSize="0.1"
+                            android:value="2.5"
+                            android:valueFrom="1.0"
+                            android:valueTo="5.0" />
+
+                        <TextView
+                            android:id="@+id/rightStickMaxAccelerationValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/spacing_small"
+                            android:minWidth="48dp"
+                            android:text="2.5x"
+                            android:gravity="center"
+                            android:textAppearance="@style/Theme.ControllerTuner.Text.Body" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</ScrollView>

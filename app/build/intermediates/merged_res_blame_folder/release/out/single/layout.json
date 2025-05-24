@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-mergeReleaseResources-44:/layout/activity_main.xml",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-46:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-mergeReleaseResources-44:/layout/fragment_test.xml",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-46:/layout/fragment_test.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-mergeReleaseResources-44:/layout/fragment_profiles.xml",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-46:/layout/fragment_profiles.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-mergeReleaseResources-44:/layout/fragment_tuning.xml",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-46:/layout/fragment_tuning.xml"
+    },
+    {
+        "merged": "com.controllertuner.app-mergeReleaseResources-44:/layout/fragment_tuning.xml",
+        "source": "com.controllertuner.app-main-46:/layout/fragment_tuning.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-mergeReleaseResources-44:/layout/item_profile.xml",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-46:/layout/item_profile.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-mergeReleaseResources-44:/layout/fragment_settings.xml",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-46:/layout/fragment_settings.xml"
+    }
+]

@@ -1,0 +1,142 @@
+[
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/layout_fragment_tuning.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/layout/fragment_tuning.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/layout_fragment_test.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/layout/fragment_test.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_ic_sort.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/ic_sort.xml"
+    },
+    {
+        "merged": "com.controllertuner.app-merged_res-45:/layout_fragment_tuning.xml.flat",
+        "source": "com.controllertuner.app-main-47:/layout/fragment_tuning.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_ic_star.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/ic_star.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_ic_settings.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/layout_fragment_settings.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/xml_backup_rules.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/xml_data_extraction_rules.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_stick_background.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/stick_background.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_ic_gamepad.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/ic_gamepad.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_ic_folder.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/ic_folder.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_ic_export.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/ic_export.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_ic_refresh.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/ic_refresh.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_ic_more_vert.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/ic_more_vert.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/menu_bottom_navigation.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/menu/bottom_navigation.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_stick_indicator.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/stick_indicator.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_ic_add.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/ic_add.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_ic_import.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/ic_import.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_ic_edit.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/ic_edit.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/layout_activity_main.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_ic_tune.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/ic_tune.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/layout_item_profile.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/layout/item_profile.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/drawable_current_indicator_background.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/drawable/current_indicator_background.xml"
+    },
+    {
+        "merged": "/root/.gradle/daemon/8.5/com.controllertuner.app-merged_res-45:/layout_fragment_profiles.xml.flat",
+        "source": "/root/.gradle/daemon/8.5/com.controllertuner.app-main-47:/layout/fragment_profiles.xml"
+    }
+]

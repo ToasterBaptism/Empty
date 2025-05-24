@@ -1,0 +1,609 @@
+/workspace/Empty/app/src/main/AndroidManifest.xml:6: Warning: WRITE_EXTERNAL_STORAGE is deprecated (and is not granted) when targeting Android 13+. If you need to write to shared storage, use the MediaStore.createWriteRequest intent. [ScopedStorage]
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/AndroidManifest.xml:7: Warning: READ_EXTERNAL_STORAGE is deprecated (and is not granted) when targeting Android 13+. If you need to query or interact with MediaStore or media files on the shared storage, you should instead use one or more new storage permissions: READ_MEDIA_IMAGES, READ_MEDIA_VIDEO or READ_MEDIA_AUDIO. [ScopedStorage]
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ScopedStorage":
+   Scoped storage is enforced on Android 10+ (or Android 11+ if using
+   requestLegacyExternalStorage). In particular, WRITE_EXTERNAL_STORAGE will
+   no longer provide write access to all files; it will provide the equivalent
+   of READ_EXTERNAL_STORAGE instead.
+
+   As of Android 13, if you need to query or interact with MediaStore or media
+   files on the shared storage, you should be using instead one or more new
+   storage permissions:
+   * android.permission.READ_MEDIA_IMAGES
+   * android.permission.READ_MEDIA_VIDEO
+   * android.permission.READ_MEDIA_AUDIO
+
+   and then add maxSdkVersion="33" to the older permission. See the developer
+   guide for how to do this:
+   https://developer.android.com/about/versions/13/behavior-changes-13#granula
+   r-media-permissions
+
+   The MANAGE_EXTERNAL_STORAGE permission can be used to manage all files, but
+   it is rarely necessary and most apps on Google Play are not allowed to use
+   it. Most apps should instead migrate to use scoped storage. To modify or
+   delete files, apps should request write access from the user as described
+   at https://goo.gle/android-mediastore-createwriterequest.
+
+   To learn more, read these resources: Play policy:
+   https://goo.gle/policy-storage-help Allowable use cases:
+   https://goo.gle/policy-storage-usecases
+
+   https://goo.gle/android-storage-usecases
+
+/workspace/Empty/app/src/main/java/com/controllertuner/input/ControllerInputManager.java:180: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+        String name = device.getName().toLowerCase();
+                                       ~~~~~~~~~~~
+/workspace/Empty/app/src/main/java/com/controllertuner/mapping/InputMappingEngine.java:362: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            sb.append("Acceleration Curve: ").append(String.format("%.1f", currentProfile.getAccelerationCurve())).append("\n");
+                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/java/com/controllertuner/mapping/InputMappingEngine.java:364: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            sb.append("Max Acceleration: ").append(String.format("%.1fx", currentProfile.getMaxAcceleration())).append("\n");
+                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/java/com/controllertuner/mapping/InputMappingEngine.java:371: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            sb.append("Right Stick Acceleration Curve: ").append(String.format("%.1f", currentProfile.getRightStickAccelerationCurve())).append("\n");
+                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/java/com/controllertuner/mapping/InputMappingEngine.java:373: Warning: Implicitly using the default locale is a common source of bugs: Use String.format(Locale, ...) instead [DefaultLocale]
+            sb.append("Right Stick Max Acceleration: ").append(String.format("%.1fx", currentProfile.getRightStickMaxAcceleration()));
+                                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "DefaultLocale":
+   Calling String#toLowerCase() or #toUpperCase() without specifying an
+   explicit locale is a common source of bugs. The reason for that is that
+   those methods will use the current locale on the user's device, and even
+   though the code appears to work correctly when you are developing the app,
+   it will fail in some locales. For example, in the Turkish locale, the
+   uppercase replacement for i is not I.
+
+   If you want the methods to just perform ASCII replacement, for example to
+   convert an enum name, call String#toUpperCase(Locale.US) instead. If you
+   really want to use the current locale, call
+   String#toUpperCase(Locale.getDefault()) instead.
+
+   https://developer.android.com/reference/java/util/Locale.html#default_locale
+
+/workspace/Empty/app/build.gradle:37: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.0 [GradleDependency]
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/build.gradle:38: Warning: A newer version of com.google.android.material:material than 1.10.0 is available: 1.12.0 [GradleDependency]
+    implementation 'com.google.android.material:material:1.10.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/build.gradle:39: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1 [GradleDependency]
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/build.gradle:40: Warning: A newer version of androidx.navigation:navigation-fragment than 2.7.4 is available: 2.9.0 [GradleDependency]
+    implementation 'androidx.navigation:navigation-fragment:2.7.4'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/build.gradle:41: Warning: A newer version of androidx.navigation:navigation-ui than 2.7.4 is available: 2.9.0 [GradleDependency]
+    implementation 'androidx.navigation:navigation-ui:2.7.4'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/build.gradle:42: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel than 2.7.0 is available: 2.9.0 [GradleDependency]
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/build.gradle:43: Warning: A newer version of androidx.lifecycle:lifecycle-livedata than 2.7.0 is available: 2.9.0 [GradleDependency]
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.7.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/build.gradle:44: Warning: A newer version of androidx.recyclerview:recyclerview than 1.3.2 is available: 1.4.0 [GradleDependency]
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/build.gradle:45: Warning: A newer version of androidx.viewpager2:viewpager2 than 1.0.0 is available: 1.1.0 [GradleDependency]
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/build.gradle:50: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1 [GradleDependency]
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/build.gradle:51: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1 [GradleDependency]
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/workspace/Empty/app/src/main/java/com/controllertuner/adapters/ProfileAdapter.java:52: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "NotifyDataSetChanged":
+   The RecyclerView adapter's onNotifyDataSetChanged method does not specify
+   what about the data set has changed, forcing any observers to assume that
+   all existing items and structure may no longer be valid. `LayoutManager`s
+   will be forced to fully rebind and relayout all visible views.
+
+/workspace/Empty/app/src/main/res/layout/activity_main.xml:39: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
+        <LinearLayout
+         ~~~~~~~~~~~~
+
+   Explanation for issues of type "UseCompoundDrawables":
+   A LinearLayout which contains an ImageView and a TextView can be more
+   efficiently handled as a compound drawable (a single TextView, using the
+   drawableTop, drawableLeft, drawableRight and/or drawableBottom attributes
+   to draw one or more images adjacent to the text).
+
+   If the two widgets are offset from each other with margins, this can be
+   replaced with a drawablePadding attribute.
+
+   There's a lint quickfix to perform this conversion in the Eclipse plugin.
+
+/workspace/Empty/app/src/main/res/drawable/ic_settings.xml:10: Warning: Very long vector path (904 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector. [VectorPath]
+        android:pathData="M19.14,12.94c0.04,-0.3 0.06,-0.61 0.06,-0.94c0,-0.32 -0.02,-0.64 -0.07,-0.94l2.03,-1.58c0.18,-0.14 0.23,-0.41 0.12,-0.61l-1.92,-3.32c-0.12,-0.22 -0.37,-0.29 -0.59,-0.22l-2.39,0.96c-0.5,-0.38 -1.03,-0.7 -1.62,-0.94L14.4,2.81c-0.04,-0.24 -0.24,-0.41 -0.48,-0.41h-3.84c-0.24,0 -0.43,0.17 -0.47,0.41L9.25,5.35C8.66,5.59 8.12,5.92 7.63,6.29L5.24,5.33c-0.22,-0.08 -0.47,0 -0.59,0.22L2.74,8.87C2.62,9.08 2.66,9.34 2.86,9.48l2.03,1.58C4.84,11.36 4.8,11.69 4.8,12s0.02,0.64 0.07,0.94l-2.03,1.58c-0.18,0.14 -0.23,0.41 -0.12,0.61l1.92,3.32c0.12,0.22 0.37,0.29 0.59,0.22l2.39,-0.96c0.5,0.38 1.03,0.7 1.62,0.94l0.36,2.54c0.05,0.24 0.24,0.41 0.48,0.41h3.84c0.24,0 0.44,-0.17 0.47,-0.41l0.36,-2.54c0.59,-0.24 1.13,-0.56 1.62,-0.94l2.39,0.96c0.22,0.08 0.47,0 0.59,-0.22l1.92,-3.32c0.12,-0.22 0.07,-0.47 -0.12,-0.61L19.14,12.94zM12,15.6c-1.98,0 -3.6,-1.62 -3.6,-3.6s1.62,-3.6 3.6,-3.6s3.6,1.62 3.6,3.6S13.98,15.6 12,15.6z" />
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "VectorPath":
+   Using long vector paths is bad for performance. There are several ways to
+   make the pathData shorter:
+   * Using less precision
+   * Removing some minor details
+   * Using the Android Studio vector conversion tool
+   * Rasterizing the image (converting to PNG)
+
+/workspace/Empty/app/src/main/res/layout/fragment_test.xml:75: Warning: Set android:baselineAligned="false" on this element for better performance [DisableBaselineAlignment]
+                <LinearLayout
+                 ~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/fragment_test.xml:156: Warning: Set android:baselineAligned="false" on this element for better performance [DisableBaselineAlignment]
+                <LinearLayout
+                 ~~~~~~~~~~~~
+
+   Explanation for issues of type "DisableBaselineAlignment":
+   When a LinearLayout is used to distribute the space proportionally between
+   nested layouts, the baseline alignment property should be turned off to
+   make the layout computation faster.
+
+/workspace/Empty/app/src/main/res/values/colors.xml:4: Warning: The resource R.color.purple_200 appears to be unused [UnusedResources]
+    <color name="purple_200">#FFBB86FC</color>
+           ~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:5: Warning: The resource R.color.purple_500 appears to be unused [UnusedResources]
+    <color name="purple_500">#FF6200EE</color>
+           ~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:6: Warning: The resource R.color.purple_700 appears to be unused [UnusedResources]
+    <color name="purple_700">#FF3700B3</color>
+           ~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:7: Warning: The resource R.color.teal_200 appears to be unused [UnusedResources]
+    <color name="teal_200">#FF03DAC5</color>
+           ~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:8: Warning: The resource R.color.teal_700 appears to be unused [UnusedResources]
+    <color name="teal_700">#FF018786</color>
+           ~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:11: Warning: The resource R.color.black appears to be unused [UnusedResources]
+    <color name="black">#FF000000</color>
+           ~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:21: Warning: The resource R.color.background_dark appears to be unused [UnusedResources]
+    <color name="background_dark">#FF121212</color>
+           ~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:23: Warning: The resource R.color.surface_dark appears to be unused [UnusedResources]
+    <color name="surface_dark">#FF1E1E1E</color>
+           ~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:28: Warning: The resource R.color.text_primary_dark appears to be unused [UnusedResources]
+    <color name="text_primary_dark">#FFFFFFFF</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:29: Warning: The resource R.color.text_secondary_dark appears to be unused [UnusedResources]
+    <color name="text_secondary_dark">#B3FFFFFF</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:34: Warning: The resource R.color.controller_active appears to be unused [UnusedResources]
+    <color name="controller_active">#FF2196F3</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:37: Warning: The resource R.color.slider_track appears to be unused [UnusedResources]
+    <color name="slider_track">#FFE0E0E0</color>
+           ~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:38: Warning: The resource R.color.slider_track_active appears to be unused [UnusedResources]
+    <color name="slider_track_active">#FF2196F3</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:39: Warning: The resource R.color.slider_thumb appears to be unused [UnusedResources]
+    <color name="slider_thumb">#FF2196F3</color>
+           ~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:42: Warning: The resource R.color.test_input_active appears to be unused [UnusedResources]
+    <color name="test_input_active">#FF4CAF50</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:43: Warning: The resource R.color.test_input_inactive appears to be unused [UnusedResources]
+    <color name="test_input_inactive">#FFBDBDBD</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:44: Warning: The resource R.color.test_deadzone appears to be unused [UnusedResources]
+    <color name="test_deadzone">#FFFF9800</color>
+           ~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:51: Warning: The resource R.color.status_success appears to be unused [UnusedResources]
+    <color name="status_success">#FF4CAF50</color>
+           ~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:53: Warning: The resource R.color.status_error appears to be unused [UnusedResources]
+    <color name="status_error">#FFF44336</color>
+           ~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/colors.xml:54: Warning: The resource R.color.status_info appears to be unused [UnusedResources]
+    <color name="status_info">#FF2196F3</color>
+           ~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:4: Warning: The resource R.dimen.activity_horizontal_margin appears to be unused [UnusedResources]
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:5: Warning: The resource R.dimen.activity_vertical_margin appears to be unused [UnusedResources]
+    <dimen name="activity_vertical_margin">16dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:15: Warning: The resource R.dimen.text_size_large appears to be unused [UnusedResources]
+    <dimen name="text_size_large">20sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:16: Warning: The resource R.dimen.text_size_medium appears to be unused [UnusedResources]
+    <dimen name="text_size_medium">16sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:17: Warning: The resource R.dimen.text_size_small appears to be unused [UnusedResources]
+    <dimen name="text_size_small">14sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:18: Warning: The resource R.dimen.text_size_extra_small appears to be unused [UnusedResources]
+    <dimen name="text_size_extra_small">12sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:21: Warning: The resource R.dimen.button_height appears to be unused [UnusedResources]
+    <dimen name="button_height">48dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:22: Warning: The resource R.dimen.button_margin appears to be unused [UnusedResources]
+    <dimen name="button_margin">8dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:23: Warning: The resource R.dimen.button_padding appears to be unused [UnusedResources]
+    <dimen name="button_padding">16dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:26: Warning: The resource R.dimen.slider_margin appears to be unused [UnusedResources]
+    <dimen name="slider_margin">16dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:27: Warning: The resource R.dimen.slider_height appears to be unused [UnusedResources]
+    <dimen name="slider_height">48dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:28: Warning: The resource R.dimen.slider_thumb_size appears to be unused [UnusedResources]
+    <dimen name="slider_thumb_size">20dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:31: Warning: The resource R.dimen.layout_margin_small appears to be unused [UnusedResources]
+    <dimen name="layout_margin_small">8dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:33: Warning: The resource R.dimen.layout_margin_large appears to be unused [UnusedResources]
+    <dimen name="layout_margin_large">24dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:36: Warning: The resource R.dimen.test_stick_size appears to be unused [UnusedResources]
+    <dimen name="test_stick_size">120dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:37: Warning: The resource R.dimen.test_trigger_width appears to be unused [UnusedResources]
+    <dimen name="test_trigger_width">80dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:38: Warning: The resource R.dimen.test_trigger_height appears to be unused [UnusedResources]
+    <dimen name="test_trigger_height">200dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:39: Warning: The resource R.dimen.test_button_size appears to be unused [UnusedResources]
+    <dimen name="test_button_size">40dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:42: Warning: The resource R.dimen.profile_item_height appears to be unused [UnusedResources]
+    <dimen name="profile_item_height">72dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:43: Warning: The resource R.dimen.profile_icon_size appears to be unused [UnusedResources]
+    <dimen name="profile_icon_size">40dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:47: Warning: The resource R.dimen.toolbar_height appears to be unused [UnusedResources]
+    <dimen name="toolbar_height">56dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:50: Warning: The resource R.dimen.spacing_tiny appears to be unused [UnusedResources]
+    <dimen name="spacing_tiny">4dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:53: Warning: The resource R.dimen.spacing_large appears to be unused [UnusedResources]
+    <dimen name="spacing_large">24dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/dimens.xml:54: Warning: The resource R.dimen.spacing_extra_large appears to be unused [UnusedResources]
+    <dimen name="spacing_extra_large">32dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:6: Warning: The resource R.string.main_title appears to be unused [UnusedResources]
+    <string name="main_title">Controller Configuration</string>
+            ~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:45: Warning: The resource R.string.create_profile appears to be unused [UnusedResources]
+    <string name="create_profile">Create New Profile</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:46: Warning: The resource R.string.edit_profile appears to be unused [UnusedResources]
+    <string name="edit_profile">Edit Profile</string>
+            ~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:47: Warning: The resource R.string.delete_profile appears to be unused [UnusedResources]
+    <string name="delete_profile">Delete Profile</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:48: Warning: The resource R.string.profile_name appears to be unused [UnusedResources]
+    <string name="profile_name">Profile Name</string>
+            ~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:49: Warning: The resource R.string.profile_description appears to be unused [UnusedResources]
+    <string name="profile_description">Description</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:50: Warning: The resource R.string.save_profile appears to be unused [UnusedResources]
+    <string name="save_profile">Save Profile</string>
+            ~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:51: Warning: The resource R.string.load_profile appears to be unused [UnusedResources]
+    <string name="load_profile">Load Profile</string>
+            ~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:56: Warning: The resource R.string.test_title appears to be unused [UnusedResources]
+    <string name="test_title">Controller Test</string>
+            ~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:57: Warning: The resource R.string.test_description appears to be unused [UnusedResources]
+    <string name="test_description">Test your controller settings in real-time</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:58: Warning: The resource R.string.left_stick_test appears to be unused [UnusedResources]
+    <string name="left_stick_test">Left Stick</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:59: Warning: The resource R.string.right_stick_test appears to be unused [UnusedResources]
+    <string name="right_stick_test">Right Stick</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:60: Warning: The resource R.string.triggers_test appears to be unused [UnusedResources]
+    <string name="triggers_test">Triggers</string>
+            ~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:61: Warning: The resource R.string.buttons_test appears to be unused [UnusedResources]
+    <string name="buttons_test">Buttons</string>
+            ~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:62: Warning: The resource R.string.reset_test appears to be unused [UnusedResources]
+    <string name="reset_test">Reset</string>
+            ~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:65: Warning: The resource R.string.settings_title appears to be unused [UnusedResources]
+    <string name="settings_title">Settings</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:66: Warning: The resource R.string.general_settings appears to be unused [UnusedResources]
+    <string name="general_settings">General</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:69: Warning: The resource R.string.save_settings_automatically appears to be unused [UnusedResources]
+    <string name="save_settings_automatically">Auto-save Settings</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:70: Warning: The resource R.string.advanced_settings appears to be unused [UnusedResources]
+    <string name="advanced_settings">Advanced</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:71: Warning: The resource R.string.polling_rate appears to be unused [UnusedResources]
+    <string name="polling_rate">Polling Rate</string>
+            ~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:72: Warning: The resource R.string.input_lag_compensation appears to be unused [UnusedResources]
+    <string name="input_lag_compensation">Input Lag Compensation</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:73: Warning: The resource R.string.debug_mode appears to be unused [UnusedResources]
+    <string name="debug_mode">Debug Mode</string>
+            ~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:76: Warning: The resource R.string.dialog_save_profile_title appears to be unused [UnusedResources]
+    <string name="dialog_save_profile_title">Save Profile</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:77: Warning: The resource R.string.dialog_save_profile_message appears to be unused [UnusedResources]
+    <string name="dialog_save_profile_message">Enter a name for this profile:</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:78: Warning: The resource R.string.dialog_delete_profile_title appears to be unused [UnusedResources]
+    <string name="dialog_delete_profile_title">Delete Profile</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:79: Warning: The resource R.string.dialog_delete_profile_message appears to be unused [UnusedResources]
+    <string name="dialog_delete_profile_message">Are you sure you want to delete this profile?</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:80: Warning: The resource R.string.dialog_reset_settings_title appears to be unused [UnusedResources]
+    <string name="dialog_reset_settings_title">Reset Settings</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:81: Warning: The resource R.string.dialog_reset_settings_message appears to be unused [UnusedResources]
+    <string name="dialog_reset_settings_message">Reset all settings to default values?</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:84: Warning: The resource R.string.ok appears to be unused [UnusedResources]
+    <string name="ok">OK</string>
+            ~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:85: Warning: The resource R.string.cancel appears to be unused [UnusedResources]
+    <string name="cancel">Cancel</string>
+            ~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:86: Warning: The resource R.string.save appears to be unused [UnusedResources]
+    <string name="save">Save</string>
+            ~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:87: Warning: The resource R.string.delete appears to be unused [UnusedResources]
+    <string name="delete">Delete</string>
+            ~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:88: Warning: The resource R.string.reset appears to be unused [UnusedResources]
+    <string name="reset">Reset</string>
+            ~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:89: Warning: The resource R.string.apply appears to be unused [UnusedResources]
+    <string name="apply">Apply</string>
+            ~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:90: Warning: The resource R.string.close appears to be unused [UnusedResources]
+    <string name="close">Close</string>
+            ~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:93: Warning: The resource R.string.value_percentage appears to be unused [UnusedResources]
+    <string name="value_percentage">%1$d%%</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:94: Warning: The resource R.string.value_decimal appears to be unused [UnusedResources]
+    <string name="value_decimal">%.2f</string>
+            ~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:95: Warning: The resource R.string.value_ms appears to be unused [UnusedResources]
+    <string name="value_ms">%1$d ms</string>
+            ~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:98: Warning: The resource R.string.error_save_profile appears to be unused [UnusedResources]
+    <string name="error_save_profile">Failed to save profile</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:99: Warning: The resource R.string.error_load_profile appears to be unused [UnusedResources]
+    <string name="error_load_profile">Failed to load profile</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:100: Warning: The resource R.string.error_delete_profile appears to be unused [UnusedResources]
+    <string name="error_delete_profile">Failed to delete profile</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:101: Warning: The resource R.string.error_controller_connection appears to be unused [UnusedResources]
+    <string name="error_controller_connection">Controller connection error</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:102: Warning: The resource R.string.error_invalid_settings appears to be unused [UnusedResources]
+    <string name="error_invalid_settings">Invalid settings detected</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:105: Warning: The resource R.string.success_profile_saved appears to be unused [UnusedResources]
+    <string name="success_profile_saved">Profile saved successfully</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:106: Warning: The resource R.string.success_profile_loaded appears to be unused [UnusedResources]
+    <string name="success_profile_loaded">Profile loaded successfully</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:107: Warning: The resource R.string.success_profile_deleted appears to be unused [UnusedResources]
+    <string name="success_profile_deleted">Profile deleted successfully</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:108: Warning: The resource R.string.success_settings_applied appears to be unused [UnusedResources]
+    <string name="success_settings_applied">Settings applied successfully</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:149: Warning: The resource R.string.sensitivity_settings appears to be unused [UnusedResources]
+    <string name="sensitivity_settings">Sensitivity Settings</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:150: Warning: The resource R.string.dead_zone_settings appears to be unused [UnusedResources]
+    <string name="dead_zone_settings">Dead Zone Settings</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:151: Warning: The resource R.string.acceleration_settings appears to be unused [UnusedResources]
+    <string name="acceleration_settings">Acceleration Settings</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:152: Warning: The resource R.string.enable_right_stick_acceleration appears to be unused [UnusedResources]
+    <string name="enable_right_stick_acceleration">Enable Right Stick Acceleration</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/strings.xml:153: Warning: The resource R.string.right_stick_acceleration_settings appears to be unused [UnusedResources]
+    <string name="right_stick_acceleration_settings">Right Stick Acceleration</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/themes.xml:26: Warning: The resource R.style.Theme_ControllerTuner_Card appears to be unused [UnusedResources]
+    <style name="Theme.ControllerTuner.Card" parent="Widget.Material3.CardView.Elevated">
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/themes.xml:33: Warning: The resource R.style.Theme_ControllerTuner_Button appears to be unused [UnusedResources]
+    <style name="Theme.ControllerTuner.Button" parent="Widget.Material3.Button">
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/themes.xml:39: Warning: The resource R.style.Theme_ControllerTuner_Button_Outlined appears to be unused [UnusedResources]
+    <style name="Theme.ControllerTuner.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/themes.xml:46: Warning: The resource R.style.Theme_ControllerTuner_Slider appears to be unused [UnusedResources]
+    <style name="Theme.ControllerTuner.Slider" parent="Widget.Material3.Slider">
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/themes.xml:70: Warning: The resource R.style.Theme_ControllerTuner_BottomNavigation appears to be unused [UnusedResources]
+    <style name="Theme.ControllerTuner.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/values/themes.xml:77: Warning: The resource R.style.Theme_ControllerTuner_Dialog appears to be unused [UnusedResources]
+    <style name="Theme.ControllerTuner.Dialog" parent="ThemeOverlay.Material3.Dialog">
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+/workspace/Empty/app/src/main/res/mipmap-hdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/workspace/Empty/app/src/main/res/mipmap-mdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/workspace/Empty/app/src/main/res/mipmap-xhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/workspace/Empty/app/src/main/res/mipmap-xxhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/workspace/Empty/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/workspace/Empty/app/src/main/res/mipmap-hdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+/workspace/Empty/app/src/main/res/mipmap-mdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+/workspace/Empty/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+/workspace/Empty/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+/workspace/Empty/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+
+   Explanation for issues of type "IconLauncherShape":
+   According to the Android Design Guide
+   (https://material.io/design/iconography/) your launcher icons should "use a
+   distinct silhouette", a "three-dimensional, front view, with a slight
+   perspective as if viewed from above, so that users perceive some depth."
+
+   The unique silhouette implies that your launcher icon should not be a
+   filled square.
+
+/workspace/Empty/app/src/main/res/layout/activity_main.xml:45: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+
+   Explanation for issues of type "ContentDescription":
+   Non-textual widgets like ImageViews and ImageButtons should use the
+   contentDescription attribute to specify a textual description of the widget
+   such that screen readers and other accessibility tools can adequately
+   describe the user interface.
+
+   Note that elements in application screens that are purely decorative and do
+   not provide any content or enable a user action should not have
+   accessibility content descriptions. In this case, set their descriptions to
+   @null. If your app's minSdkVersion is 16 or higher, you can instead set
+   these graphical elements' android:importantForAccessibility attributes to
+   no.
+
+   Note that for text fields, you should not set both the hint and the
+   contentDescription attributes since the hint will never be shown. Just set
+   the hint.
+
+   https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases
+
+/workspace/Empty/app/src/main/java/com/controllertuner/adapters/ProfileAdapter.java:113: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                currentIndicator.setText("CURRENT");
+                                         ~~~~~~~~~
+/workspace/Empty/app/src/main/java/com/controllertuner/fragments/TestFragment.java:255: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                buttonStatusText.setText("Last pressed: " + lastButtonPressed);
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/java/com/controllertuner/fragments/TestFragment.java:255: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                buttonStatusText.setText("Last pressed: " + lastButtonPressed);
+                                         ~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+/workspace/Empty/app/src/main/res/layout/fragment_tuning.xml:71: Warning: Hardcoded string "50%", should use @string resource [HardcodedText]
+                        android:text="50%"
+                        ~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/fragment_tuning.xml:107: Warning: Hardcoded string "50%", should use @string resource [HardcodedText]
+                        android:text="50%"
+                        ~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/fragment_tuning.xml:143: Warning: Hardcoded string "50%", should use @string resource [HardcodedText]
+                        android:text="50%"
+                        ~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/fragment_tuning.xml:209: Warning: Hardcoded string "10%", should use @string resource [HardcodedText]
+                        android:text="10%"
+                        ~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/fragment_tuning.xml:245: Warning: Hardcoded string "10%", should use @string resource [HardcodedText]
+                        android:text="10%"
+                        ~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/fragment_tuning.xml:281: Warning: Hardcoded string "5%", should use @string resource [HardcodedText]
+                        android:text="5%"
+                        ~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/fragment_tuning.xml:361: Warning: Hardcoded string "1.0", should use @string resource [HardcodedText]
+                            android:text="1.0"
+                            ~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/fragment_tuning.xml:397: Warning: Hardcoded string "30%", should use @string resource [HardcodedText]
+                            android:text="30%"
+                            ~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/fragment_tuning.xml:433: Warning: Hardcoded string "2.0x", should use @string resource [HardcodedText]
+                            android:text="2.0x"
+                            ~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/fragment_tuning.xml:515: Warning: Hardcoded string "1.2", should use @string resource [HardcodedText]
+                            android:text="1.2"
+                            ~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/fragment_tuning.xml:551: Warning: Hardcoded string "25%", should use @string resource [HardcodedText]
+                            android:text="25%"
+                            ~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/fragment_tuning.xml:587: Warning: Hardcoded string "2.5x", should use @string resource [HardcodedText]
+                            android:text="2.5x"
+                            ~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/item_profile.xml:48: Warning: Hardcoded string "Profile Name", should use @string resource [HardcodedText]
+                    android:text="Profile Name"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/item_profile.xml:56: Warning: Hardcoded string "CURRENT", should use @string resource [HardcodedText]
+                    android:text="CURRENT"
+                    ~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/item_profile.xml:71: Warning: Hardcoded string "Profile description", should use @string resource [HardcodedText]
+                android:text="Profile description"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/Empty/app/src/main/res/layout/item_profile.xml:82: Warning: Hardcoded string "Modified: Jan 01, 2024 12:00", should use @string resource [HardcodedText]
+                android:text="Modified: Jan 01, 2024 12:00"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+0 errors, 155 warnings

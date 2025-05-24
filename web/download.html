@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download APK - Controller Tuner</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            color: white;
+        }
+        
+        .download-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            max-width: 500px;
+            color: #333;
+        }
+        
+        .download-container h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .file-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+        
+        .back-link {
+            margin-top: 20px;
+        }
+        
+        .back-link a {
+            color: #667eea;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="download-container">
+        <h1>📱 Download Controller Tuner APK</h1>
+        <p>Choose your preferred version:</p>
+        
+        <div class="file-info">
+            <strong>Debug Version</strong><br>
+            Size: 6.2 MB<br>
+            Includes debugging symbols
+        </div>
+        <a href="../app/build/outputs/apk/debug/app-debug.apk" class="download-btn" download="ControllerTuner-debug.apk">
+            📥 Download Debug APK
+        </a>
+        
+        <div class="file-info">
+            <strong>Release Version</strong><br>
+            Size: 5.0 MB<br>
+            Optimized for production
+        </div>
+        <a href="../app/build/outputs/apk/release/app-release-unsigned.apk" class="download-btn" download="ControllerTuner-release.apk">
+            📦 Download Release APK
+        </a>
+        
+        <div class="back-link">
+            <a href="index.html">← Back to App Showcase</a>
+        </div>
+    </div>
+</body>
+</html>
